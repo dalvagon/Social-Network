@@ -11,13 +11,12 @@ class SocialNetwork:
             friendships: list
                 A list of tuples containing the names of two users that are friends.
         """
-        self.frienships = frienships
         self.users = set()
-        self.buildNetwork()
+        self.buildNetwork(frienships)
 
-    def buildNetwork(self):
+    def buildNetwork(self, frienships):
         """Build the network from the list of friendships"""
-        for user1, user2 in self.frienships:
+        for user1, user2 in frienships:
             if user1 == user2:
                 raise ValueError("User cannot be friend with himself")
 
