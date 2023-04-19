@@ -6,13 +6,15 @@ I chose this representation because it is the most efficient way to represent a 
 <br>
 
 <h1>What algorithm did you use to compute the shortest chain of friends? What alternatives did you consider? Why did you choose this algorithm over the alternatives?</h1>
-I used a breadth first search to compute the shortest chain of friends.
+I used a breadth first search to compute the shortest chain of friends, because it is the most efficient way to find the shortest path between two nodes in a graph. The breadth first search visits all the nodes at the current level before moving on to the next level. It is guaranteed to find the shortest path between two nodes in an unweighted graph, if one exists.
+The efficiency of the breadth first search is O(V+E), where V is the number of users and E is the number of friendships in the network. This is because the algorithm visits each node and edge at most once.
 <br>
 I considered using a depth first search, but I decided against it because it would not be as efficient as a breadth first search.
-Because the breadth first search visits all the nodes at the current level before moving on to the next level, it will find a node at a shallow level faster than a depth first search. DFS can be faster if the node you are looking for is at a deeper level, but a social network is usually a dense graph, so the node you are looking for is likely to be at a shallow level.
+The breadth first search visits all the nodes at the current level before moving on to the next level, so it will find a node at a shallow level faster than a depth first search. DFS can be faster if the node you are looking for is at a deeper level, but a social network is usually a dense graph, so the node you are looking for is likely to be at a shallow level.
 <br>
-I also considered using a Dijkstra's algorithm, but I decided against it my graph is unweighted. Dijkstra's algorithm is used for weighted graphs. I could have use Dijkstra's algorithm if I had assigned weight 1 to all the edges, but then it would have been the same as using a breadth first search.
-The efficiency of the breadth first search is O(V+E), where V is the number of users and E is the number of friendships in the network. This is because the algorithm visits each node once and each edge at most once.
+I also considered using a Dijkstra's algorithm, but I decided against it my graph is unweighted, because Dijkstra's algorithm is used for weighted graphs. I could have use Dijkstra's algorithm if I had assigned weight 1 to all the edges, but then it would have been the same as using a breadth first search.
+<br>
+A third alternative I considered was the A* algorithm, but there isn't a well defined heuristic function that can be used to guide the search towards the target node in an unweighted graph, so I decided against it.
 <br>
 
 <h1>Please enumerate the test cases you considered and explain their relevance.</h1>
